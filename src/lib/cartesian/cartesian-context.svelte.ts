@@ -1,4 +1,5 @@
 import { extent, type ScaleContinuousNumeric, scaleLinear } from "d3";
+import type { ScatterSeriesContext } from "$lib/scatter-series/scatter-series-context.svelte";
 import { ctx } from "../context-helper";
 import { FigureContext } from "../figure/figure-context.svelte";
 import type { LineSeriesContext } from "../line-series/line-series-context.svelte";
@@ -47,7 +48,7 @@ export class CartesianContext {
 		);
 	}
 
-	public series: LineSeriesContext[] = $state([]);
+	public series: (LineSeriesContext | ScatterSeriesContext)[] = $state([]);
 
 	public xScale: ScaleContinuousNumeric<number, number, never>;
 	public yScale: ScaleContinuousNumeric<number, number, never>;

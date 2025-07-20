@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Axis, Cartesian, Figure, LineSeries } from "$lib";
-  import ScatterSeries from "$lib/scatter-series/scatter-series.svelte";
+  import { Axis, Cartesian, Figure, LineSeries, ScatterSeries } from "$lib";
 
   const randomData = (len = 10) =>
     Array.from(Array(len)).map(
@@ -31,6 +30,7 @@
         <Axis align="left" />
         <Axis align="bottom" />
         <LineSeries data={series2} color="green" />
+        <ScatterSeries data={series2} color="green" />
       </Cartesian>
     </Figure>
   </div>
